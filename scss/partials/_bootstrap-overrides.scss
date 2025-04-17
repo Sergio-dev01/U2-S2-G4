@@ -1,0 +1,58 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../../bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$btn-padding-x: 2.5rem;
+$btn-padding-y: 0.75rem;
+
+$grid-gutter-width: 0.5rem;
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "../../bootstrap/scss/variables";
+@import "../../bootstrap/scss/variables-dark";
+
+:root {
+  --bs-card-bg: #{$card-bg};
+  --bs-card-color: #{$card-color};
+  --bs-border-radius: #{$border-radius};
+}
+// 4. Include any default map overrides here
+$font-sizes-additional: (
+  7: 2rem,
+  8: 2.5rem,
+  9: 3rem,
+  10: 3.5rem,
+);
+
+$font-sizes: map-merge($font-sizes, $font-sizes-additional);
+
+$border-widths-additional: (
+  6: 6px,
+  7: 7px,
+  8: 8px,
+  9: 9px,
+  10: 10px,
+);
+$border-widths: map-merge($border-widths, $border-widths-additional);
+
+// 5. Include remainder of required parts
+@import "../../bootstrap/scss/maps";
+@import "../../bootstrap/scss/mixins";
+@import "../../bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "../../bootstrap/scss/utilities";
+@import "../../bootstrap/scss/reboot";
+@import "../../bootstrap/scss/type";
+@import "../../bootstrap/scss/images";
+@import "../../bootstrap/scss/containers";
+@import "../../bootstrap/scss/grid";
+@import "../../bootstrap/scss/helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+@import "../../bootstrap/scss/utilities/api";
+
+// 8. Add additional custom code here
